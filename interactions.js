@@ -1,5 +1,10 @@
-const sims = [
-    { name: '', key: '{initiator}  {target}' },
+/**
+ * Add lines and modify this list to generate a bunch of descriptions in parallel
+ */
+const interactions = [
+    // example:
+    // { name: 'si_marketStalls_ReviewDrink_CriticCareer', key: '{initiator} is at a food stall at a festival and is a food critic, they review the drink to {target}' },
+    { name: '', key: '' },
 ];
 
 const { Configuration, OpenAIApi } = require("openai");
@@ -8,7 +13,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-const doit = async (data) => {
+const generateInteractionDescription = async (data) => {
     try {
         const response = await openai.createChatCompletion({
             model: 'gpt-4',
@@ -64,8 +69,8 @@ const doit = async (data) => {
 }
 
 const run = async () => {
-    sims.forEach(async sim => {
-        doit(sim);
+    interactions.forEach(async sim => {
+        generateInteractionDescription(sim);
     });
 }
 
@@ -77,12 +82,3 @@ function removeFirstAndLastLine(str) {
     lines.pop(); // Remove the last line
     return lines.join('\n');
 }
-
-// const leftSims = [];
-// sims.forEach(sim => {
-//     if (doneSims[sim] === undefined) {
-//         leftSims.push(sim);
-//     }
-// })
-
-// console.log(JSON.stringify(leftSims, null, 4));

@@ -1,6 +1,11 @@
-const sims = [
-    { name: '90243216', key: 'Willow Creek Archive, a library, Two level library, first floor: chess, bookshelves, ornate, long tables, bathrooms, kids area with foam tiles. Second floor: Large staircase to overlooking balcony with bookshelves lining the walls.' },
-    { name: '254175856', key: 'Burners & Builders, a gym, single story gym with yellow and blue theme, weight machines, treadmills, punching bags, large ceiling to floor windows on every wall, back area has lockers.' },
+/**
+ * Give a plain text description of the objects and look of a location to generate an elaborate description
+ * Use get_lot_id in the cheat console to get the lot id
+ */
+const locations = [
+    // example
+    // { name: '90243216', key: 'Willow Creek Archive, a library, Two level library, first floor: chess, bookshelves, ornate, long tables, bathrooms, kids area with foam tiles. Second floor: Large staircase to overlooking balcony with bookshelves lining the walls.' },
+    { name: '', key: '' },
 ];
 
 const { Configuration, OpenAIApi } = require("openai");
@@ -9,7 +14,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-const doit = async (data) => {
+const generateLocationDescriptions = async (data) => {
     try {
         const response = await openai.createChatCompletion({
             model: 'gpt-4',
@@ -65,8 +70,8 @@ Plush bar stools offer comfort and a front-row seat to the vibrant characters th
 }
 
 const run = async () => {
-    sims.forEach(async sim => {
-        doit(sim);
+    locations.forEach(async sim => {
+        generateLocationDescriptions(sim);
     });
 }
 
@@ -78,12 +83,3 @@ function removeFirstAndLastLine(str) {
     lines.pop(); // Remove the last line
     return lines.join('\n');
 }
-
-// const leftSims = [];
-// sims.forEach(sim => {
-//     if (doneSims[sim] === undefined) {
-//         leftSims.push(sim);
-//     }
-// })
-
-// console.log(JSON.stringify(leftSims, null, 4));
