@@ -5,7 +5,7 @@
 const locations = [
     // example
     // { name: '90243216', key: 'Willow Creek Archive, a library, Two level library, first floor: chess, bookshelves, ornate, long tables, bathrooms, kids area with foam tiles. Second floor: Large staircase to overlooking balcony with bookshelves lining the walls.' },
-    { name: '', key: '' },
+    { name: '1464926213', key: 'Planet Honey Pop, a Karaoke bar, Chic karaoke bar with small tables and chairs all surrounding a big karaoke stage, the stage has a podium and a big tv and flashing leds behind it showing the lyrics, a small bar lines the wall next to a small lounge set on top of a piano key carpet, the bathroom has two potty mouth 2.0 AI toilets.' },
 ];
 
 const { Configuration, OpenAIApi } = require("openai");
@@ -17,7 +17,7 @@ const openai = new OpenAIApi(configuration);
 const generateLocationDescriptions = async (data) => {
     try {
         const response = await openai.createChatCompletion({
-            model: 'gpt-4',
+            model: 'gpt-4-0613',
             temperature: 0.7,
             messages: [
                 {
