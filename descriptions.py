@@ -13,12 +13,12 @@ interaction_descriptions = {
     },
     "mixer_Baby_ShowOff": {
         "pre_actions": [
-            "{initiator} is excitedly showing off their new baby to {target}."
+            "{initiator} is excitingly showing their new baby to {target}."
         ]
     },
     "mixer_ScienceTable_Empty": {
         "pre_actions": [
-            "{initiator} is approaching {target} with an empty flask, ready for a scientific experiment."
+            "{initiator} is approaching {target} with an empty flask, getting ready for a scientific experiment."
         ]
     },
     "mixer_Social_GetToKnow_Friendly_STC": {
@@ -28,7 +28,7 @@ interaction_descriptions = {
     },
     "mixer_social_AskDueDate_targeted_mischief_skills": {
         "pre_actions": [
-            "{initiator} is cruelly asking {target} their due date, knowing that they aren't pregnant."
+            "{initiator} is cruelly asking {target} about their due date, even though they are not pregnant."
         ]
     },
     "mixer_social_GossipAbout_targeted_friendly_alwaysOn": {
@@ -38,7 +38,7 @@ interaction_descriptions = {
     },
     "mixer_social_AirHorn_targeted_mischief_skills": {
         "pre_actions": [
-            "{initiator} is playfully pranking {target} by blasting an air horn in their face."
+            "{initiator} is pranking {target} playfully by blasting an air horn in their face."
         ]
     },
     "mixer_social_SlapEmSilly_targeted_mischief_skills": {
